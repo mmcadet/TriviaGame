@@ -56,7 +56,7 @@ var triviaGame = {
 	btnClicked: false,
 	numberCorrect: 0,
 	numberIncorrect: 0,
-	numberUnAnswered: 0,
+	numberSkipped: 0,
 
 	beginGame: function(){	
 		if(triviaGame.questionCount == triviaGame.qAndA.length){
@@ -165,7 +165,7 @@ var triviaGame = {
 		var newImg = $("<img>").attr('src', triviaGame.qAndA[triviaGame.questionCount].imgUrl).attr('width', '115px').attr('id', 'correctMovieImage');
 		$('#pic').append(newImg);
         
-        triviaGame.numberUnAnswered++;
+        triviaGame.numberSkipped++;
 		triviaGame.displayNextInt = setInterval(triviaGame.beginGame, 5000);
 		triviaGame.questionCount++;	
     },
@@ -183,7 +183,7 @@ var triviaGame = {
 		$('#elapsedTime').empty();
 		triviaGame.numberCorrect = 0;
 		triviaGame.numberIncorrect = 0;
-		triviaGame.numberUnAnswered = 0;
+		triviaGame.numberSkipped = 0;
     },
     
 //Game Over and DOM reset
@@ -195,7 +195,7 @@ var triviaGame = {
 		$('#gameComplete').css('display', 'block');
 		$('#gameOverCorrect span').html(triviaGame.numberCorrect);
 		$('#gameOverIncorrect span').html(triviaGame.numberIncorrect);
-		$('#unanswered span').html(triviaGame.numberUnAnswered);
+		$('#skipped span').html(triviaGame.numberSkipped);
 		triviaGame.timer = 30;
 	}
 };
