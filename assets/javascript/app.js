@@ -44,7 +44,7 @@ var triviaGame = {
 		    ans2: "Me",
 		    ans3: "Doctor",
 		    ans4: "A mirror",
-			imgUrl: "./assets/images/doc1.jpg"}],
+			imgUrl: "./assets/images/doc2.jpg"}],
 
 	correctAnswers: ['Reproductive System', '8', '1,000', 'Chromosomes', 'Abstinence','Doctor'],//array to hold correct answers
 	userAnswers: [],
